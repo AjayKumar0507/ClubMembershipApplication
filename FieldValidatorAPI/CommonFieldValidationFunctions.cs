@@ -99,11 +99,12 @@ namespace FieldValidationAPI
 
         private static bool PatternMatchValid(string fieldVal, string regularExpressionPattern)
         {
-            Regex regex = new Regex(regularExpressionPattern);
-
-            if (regex.IsMatch(fieldVal))
-                return true;
-            return false;
+            //Regex regex = new Regex(regularExpressionPattern);
+            Console.WriteLine(fieldVal);
+            Console.WriteLine(regularExpressionPattern);
+            if (string.IsNullOrWhiteSpace(fieldVal)) return false;
+            Regex regex = new Regex(regularExpressionPattern, RegexOptions.IgnoreCase);
+            return regex.IsMatch(fieldVal.Trim());
         }
 
         private static bool CompareFieldsValid(string fieldVal1, string fieldVal2)

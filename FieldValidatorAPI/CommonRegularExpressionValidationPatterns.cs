@@ -8,7 +8,7 @@ namespace FieldValidationAPI
 {
     public static class CommonRegularExpressionValidationPatterns
     {
-        public const string Email_Address_RegEx_Pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+        public const string Email_Address_RegEx_Pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
         public const string IND_PhoneNumber_RegEx_Pattern = @"^[+]{1}(?:[0-9\-\(\)\/\.]\s?){6, 15}[0-9]{1}$";
 

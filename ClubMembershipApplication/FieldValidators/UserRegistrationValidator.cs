@@ -36,7 +36,10 @@ namespace ClubMembershipApplication.FieldValidators
             get
             {
                 if (fieldArray == null)
+                {
                     fieldArray = new string[Enum.GetValues(typeof(FieldConstants.UserRegistrationField)).Length];
+                    Console.WriteLine(fieldArray.Length);
+                }
                 return fieldArray;
             }
         }
@@ -61,6 +64,7 @@ namespace ClubMembershipApplication.FieldValidators
 
         public UserRegistrationValidator(IRegister register)
         {
+            Console.WriteLine("Hello");
             this.register = register;
         }
 
@@ -79,7 +83,7 @@ namespace ClubMembershipApplication.FieldValidators
         private bool ValidField(int fieldIndex, string fieldValue, string[] fieldArray, out string fieldInvalidMessage)
         {
             fieldInvalidMessage = null;
-
+            Console.WriteLine(fieldValue);
             FieldConstants.UserRegistrationField userRegistrationField = (FieldConstants.UserRegistrationField)fieldIndex;
 
             switch (userRegistrationField)
