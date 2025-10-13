@@ -3,14 +3,15 @@ using ClubMembershipApplication.FieldValidators;
 
 namespace ClubMembershipApplication
 {
-    #pragma warning restore CS8601
+    
     #pragma warning disable CS8601
+    #pragma warning disable CS8604
     public class UserRegistrationView(IRegister register, IFieldValidator fieldValidator) : IView
     {
         
         public IFieldValidator FieldValidator => fieldValidator;
 
-        IRegister? register = register;
+        IRegister register = register;
 
         public void RunView()
         {
@@ -57,7 +58,7 @@ namespace ClubMembershipApplication
         }
 
 
-        private bool FieldValid(FieldConstants.UserRegistrationField field, string? fieldValue)
+        private bool FieldValid(FieldConstants.UserRegistrationField field, string fieldValue)
         {
             if (!fieldValidator.ValidatorDel((int)field, fieldValue, fieldValidator.FieldArray, out string invalidMessage))
             {

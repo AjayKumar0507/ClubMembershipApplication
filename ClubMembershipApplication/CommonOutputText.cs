@@ -30,14 +30,14 @@ namespace ClubMembershipApplication
         {
             get
             {
-                string heading = "Register";
+                string heading = "Login";
                 return $"{heading}{Environment.NewLine}{new string('-', heading.Length)}";
             }
         }
 
         public static void WriteMainHeading()
         {
-            Console.Clear();
+            // Console.Clear();
             Console.WriteLine(MainHeading);
             Console.WriteLine();
             Console.WriteLine();
@@ -45,7 +45,7 @@ namespace ClubMembershipApplication
 
         public static void WriteLoginHeading()
         {
-            Console.Clear();
+            // Console.Clear();
             Console.WriteLine(LoginHeading);
             Console.WriteLine();
             Console.WriteLine();
@@ -53,7 +53,7 @@ namespace ClubMembershipApplication
 
         public static void WriteRegistrationHeading()
         {
-            Console.Clear();
+            // Console.Clear();
             Console.WriteLine(RegistrationHeading);
             Console.WriteLine();
             Console.WriteLine();

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace ClubMembershipApplication.FieldValidators
 {
+    #pragma warning restore CS8625
+    #pragma warning disable CS8625
     public class UserRegistrationValidator : IFieldValidator
     {
         const int FirstName_Min_Length = 2;
@@ -19,17 +21,17 @@ namespace ClubMembershipApplication.FieldValidators
 
         delegate bool EmailExistsDel(string emailAddress);
 
-        FieldValidatorDel? fieldValidatorDel = null;
+        FieldValidatorDel fieldValidatorDel = null;
 
-        RequiredValidDel? requiredValidDel = null;
-        StringLengthValidDel? stringLengthValidDel = null;
-        DateValidDel? dateValidDel = null;
-        PatternMatchValidDel? patternMatchValidDel = null;
-        CompareFieldsValidDel? compareFieldsValidDel = null;
+        RequiredValidDel requiredValidDel = null;
+        StringLengthValidDel stringLengthValidDel = null;
+        DateValidDel dateValidDel = null;
+        PatternMatchValidDel patternMatchValidDel = null;
+        CompareFieldsValidDel compareFieldsValidDel = null;
 
-        EmailExistsDel? emailExistsDel = null;
+        EmailExistsDel emailExistsDel = null;
 
-        string[] fieldArray = [];
+        string[] fieldArray = null;
 
         public string[] FieldArray
         {
@@ -70,7 +72,7 @@ namespace ClubMembershipApplication.FieldValidators
 
         public void InitialiseValidatorDelegates()
         {
-            fieldValidatorDel = ValidField;
+            fieldValidatorDel = new FieldValidatorDel(ValidField);
             emailExistsDel = new EmailExistsDel(register.EmailExists);
 
             requiredValidDel = CommonFieldValidatorFunctions.RequiredFieldValidDel;
@@ -83,7 +85,7 @@ namespace ClubMembershipApplication.FieldValidators
         private bool ValidField(int fieldIndex, string fieldValue, string[] fieldArray, out string fieldInvalidMessage)
         {
             fieldInvalidMessage = null;
-            Console.WriteLine(fieldValue);
+            Console.WriteLine(FieldArray.Length);
             FieldConstants.UserRegistrationField userRegistrationField = (FieldConstants.UserRegistrationField)fieldIndex;
 
             switch (userRegistrationField)
