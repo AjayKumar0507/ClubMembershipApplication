@@ -25,6 +25,7 @@ namespace ClubMembershipApplication.Data
         {
             using (var dbContext = new ClubMembershipDbContext())
             {
+                dbContext.Database.EnsureCreated();
                 User user = new User
                 {
                     EmailAddress = fields[(int)FieldConstants.UserRegistrationField.EmailAddress],

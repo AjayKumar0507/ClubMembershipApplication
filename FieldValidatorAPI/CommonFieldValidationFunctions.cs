@@ -99,9 +99,6 @@ namespace FieldValidationAPI
 
         private static bool PatternMatchValid(string fieldVal, string regularExpressionPattern)
         {
-            //Regex regex = new Regex(regularExpressionPattern);
-            Console.WriteLine(fieldVal);
-            Console.WriteLine(regularExpressionPattern);
             if (string.IsNullOrWhiteSpace(fieldVal)) return false;
             Regex regex = new Regex(regularExpressionPattern, RegexOptions.IgnoreCase);
             return regex.IsMatch(fieldVal.Trim());

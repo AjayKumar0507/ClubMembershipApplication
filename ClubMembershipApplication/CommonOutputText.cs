@@ -37,7 +37,7 @@ namespace ClubMembershipApplication
 
         public static void WriteMainHeading()
         {
-            // Console.Clear();
+             Console.Clear();
             Console.WriteLine(MainHeading);
             Console.WriteLine();
             Console.WriteLine();
@@ -45,7 +45,7 @@ namespace ClubMembershipApplication
 
         public static void WriteLoginHeading()
         {
-            // Console.Clear();
+             Console.Clear();
             Console.WriteLine(LoginHeading);
             Console.WriteLine();
             Console.WriteLine();
@@ -53,7 +53,7 @@ namespace ClubMembershipApplication
 
         public static void WriteRegistrationHeading()
         {
-            // Console.Clear();
+             Console.Clear();
             Console.WriteLine(RegistrationHeading);
             Console.WriteLine();
             Console.WriteLine();

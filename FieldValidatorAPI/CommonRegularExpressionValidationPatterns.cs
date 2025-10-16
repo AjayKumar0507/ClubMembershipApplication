@@ -14,7 +14,8 @@ namespace FieldValidationAPI
 
         public const string IND_Post_Code_RegEx_Pattern = @"^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$";
 
-        public const string Strong_Password_RegEx_Pattern = @"(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$";
+        public const string Strong_Password_RegEx_Pattern = @"(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;'"",.<>?/])(?!.*\s).*$";
+
 
     }
 }

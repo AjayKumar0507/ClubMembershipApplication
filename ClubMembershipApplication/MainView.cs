@@ -19,17 +19,17 @@ namespace ClubMembershipApplication
         {
             CommonOutputText.WriteMainHeading();
 
-            Console.WriteLine("Please press '' to login or if you not registered yet please press 'r'");
+            Console.WriteLine("Please press 'l' to login or if you not registered yet please press 'r'");
 
             ConsoleKey key = Console.ReadKey().Key;
 
             if (key == ConsoleKey.R)
             {
                 RunUserRegistrationView();
+                RunUserLoginView();
             }
             else if (key == ConsoleKey.L)
             {
-                RunUserLoginView();
                 RunUserLoginView();
             }
             else
