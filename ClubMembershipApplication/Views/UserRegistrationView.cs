@@ -49,7 +49,7 @@ namespace ClubMembershipApplication
 
             do
             {
-                Console.WriteLine(promptText);
+                Console.Write(promptText);
                 fieldVal = Console.ReadLine();
             }
             while (!FieldValid(field, fieldVal));

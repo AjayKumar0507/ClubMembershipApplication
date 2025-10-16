@@ -16,6 +16,10 @@ namespace ClubMembershipApplication.Views
 
         public void RunView()
         {
+
+            Console.Clear();
+            CommonOutputText.WriteMainHeading();
+
             CommonOutputFormat.ChangeFontColor(FontTheme.Success);
             Console.WriteLine($"{user.FirstName} !! {Environment.NewLine} Welcome to the Cycling Club!.");
             CommonOutputFormat.ChangeFontColor(FontTheme.Default);
